@@ -85,6 +85,12 @@ textarea{min-height:90px;resize:vertical}.choices{display:grid;gap:8px}.choice{d
 .activity-admin p{margin:0;line-height:1.75}
 .activity-contact{display:contents}
 
+
+.identity-choice{align-items:flex-start}
+.identity-choice>span{display:block;line-height:1.55}
+.identity-choice strong{display:block;font-weight:750;color:var(--ink)}
+.identity-choice small{display:block;margin-top:5px;color:var(--muted);font-size:14px;line-height:1.65;font-weight:400}
+
 </style>
 </head>
 <body><main class="wrap">
@@ -138,7 +144,32 @@ textarea{min-height:90px;resize:vertical}.choices{display:grid;gap:8px}.choice{d
 <div class="field" data-q="6"><label class="legend" for="nationalId">身分證字號 <span class="req">*</span></label><p class="help">保險用</p><input id="nationalId" name="nationalId" type="text" required maxlength="10" autocomplete="off"></div>
 <div class="field" data-q="7"><label class="legend" for="phone">手機號碼 <span class="req">*</span></label><p class="help">請確實填寫以利聯繫</p><input id="phone" name="phone" type="tel" required autocomplete="tel"></div>
 <div class="field" data-q="8"><label class="legend" for="email">Email</label><p class="help">選填。填寫 Email 者，送出後會收到「報名成功／候補通知」；未填寫不影響報名資格，只是不會收到 Email 通知。</p><input id="email" name="email" type="email" autocomplete="email"></div>
-<div class="form-part"><strong>第二部分｜Mentor參與與活動期待</strong><span>請依你的參與經驗與期待填寫。</span></div><div class="field" data-q="9"><span class="legend">我是 <span class="req">*</span></span><div class="choices"><label class="choice"><input type="radio" name="identity" value="今年分享的Mentor講師（含見習Mentor）" required>今年分享的Mentor講師（含見習Mentor）</label><label class="choice"><input type="radio" name="identity" value="今年參與過Mentor各項活動之Mentor、少年">今年參與過Mentor各項活動之Mentor、少年</label><label class="choice"><input type="radio" name="identity" value="今年未參加過活動，但已是Mentor">今年未參加過活動，但已是Mentor</label><label class="choice"><input type="radio" name="identity" value="其他有意成為Mentor的少年">其他有意成為Mentor的少年</label></div></div>
+<div class="form-part"><strong>第二部分｜Mentor參與與活動期待</strong><span>請依你的參與經驗與期待填寫。</span></div><div class="field" data-q="9">
+<span class="legend">今年參與 Mentor 方案的情形 <span class="req">*</span></span>
+<div class="help"><span class="dot">．請選擇最符合你今年參與情形的一項。</span></div>
+<div class="choices identity-choices">
+  <label class="choice identity-choice">
+    <input type="radio" name="identity" value="今年有分享的Mentor講師（含見習Mentor）" required>
+    <span><strong>今年有分享的 Mentor 講師（含見習 Mentor）</strong>
+    <small>今年曾在 Mentor 活動中擔任分享者／講師者，請選這一項。</small></span>
+  </label>
+  <label class="choice identity-choice">
+    <input type="radio" name="identity" value="今年有參加Mentor活動，但沒有擔任分享者">
+    <span><strong>今年有參加 Mentor 活動，但沒有擔任分享者</strong>
+    <small>包含 Mentor 講師、少年；只要今年曾參加技能培力團體、討論永續行動團體、SDGs 永續發展服務行動等活動，但今年沒有擔任分享者，請選這一項。</small></span>
+  </label>
+  <label class="choice identity-choice">
+    <input type="radio" name="identity" value="今年沒有參加活動，但已是Mentor">
+    <span><strong>今年沒有參加活動，但已是 Mentor</strong>
+    <small>已具 Mentor 講師身分，但今年沒有參加上述 Mentor 活動。</small></span>
+  </label>
+  <label class="choice identity-choice">
+    <input type="radio" name="identity" value="其他有意成為Mentor的少年">
+    <span><strong>其他有意成為 Mentor 的少年</strong>
+    <small>不屬於以上三類，但對 Mentor 有興趣、想進一步了解或未來有意成為 Mentor 的少年。</small></span>
+  </label>
+</div>
+</div>
 <div class="field" data-q="10"><span class="legend">在這次團體中我期待：（請依期待程度複選，至多5項） <span class="req">*</span></span><div id="expectations" class="choices"></div><div id="expectCounter" class="counter">已選擇 0／5 項</div><input id="expectOtherText" class="inline-other" type="text" placeholder="請填寫其他期待"></div>
 <div class="form-part"><strong>第三部分｜餐食與交通</strong><span>如有交通補助需求，選擇「有」後會顯示交通資料欄位。</span></div><div class="field" data-q="11"><span class="legend">用餐習慣 <span class="req">*</span></span><div class="choices"><label class="choice"><input type="radio" name="meal" value="葷" required>葷</label><label class="choice"><input type="radio" name="meal" value="素">素</label><label class="choice"><input type="radio" name="meal" value="不用餐">不用餐</label></div></div>
 <div class="field" data-q="12"><span class="legend">有無交通費補助需求？ <span class="req">*</span></span><div class="choices"><label class="choice"><input type="radio" name="transportSubsidy" value="有" required>有</label><label class="choice"><input type="radio" name="transportSubsidy" value="無">無</label></div></div>
