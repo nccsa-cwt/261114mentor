@@ -37,6 +37,8 @@ textarea{min-height:90px;resize:vertical}.choices{display:grid;gap:8px}.choice{d
 .field[data-q="15"]>.legend::before,.field[data-q="15"]>label.legend::before{content:"15"!important}
 .field[data-q="16"]>.legend::before,.field[data-q="16"]>label.legend::before{content:"16"!important}
 .field[data-q="17"]>.legend::before,.field[data-q="17"]>label.legend::before{content:"17"!important}
+.field[data-q="18"]>.legend::before,.field[data-q="18"]>label.legend::before{content:"18"!important}
+.field[data-q="19"]>.legend::before,.field[data-q="19"]>label.legend::before{content:"19"!important}
 .activity-main{display:grid;grid-template-columns:1fr 1fr;gap:12px 28px}.activity-main p{margin:0}.activity-main .wide{grid-column:1/-1}
 .activity-highlight{margin-top:26px;padding:20px 22px;background:var(--soft);border:1px solid var(--line);border-radius:14px}
 .activity-highlight h3,.activity-block h3{margin:0 0 13px;color:var(--dark);font-size:19px}.activity-highlight p{margin:5px 0}
@@ -108,7 +110,7 @@ textarea{min-height:90px;resize:vertical}.choices{display:grid;gap:8px}.choice{d
 <h2 class="activity-title">活動資訊</h2>
 <div class="activity-main">
 <p>📅 <b>活動日期：</b>115年11月14日（週六）</p>
-<p>📅 <b>報名截止日：</b>115年10月30日（週五）</p>
+<p>📅 <b>報名截止日：</b>115年10月23日（週五）</p>
 <p>🕛 <b>活動時間：</b>10:00～16:30</p>
 <p>🕛 <b>報到時間：</b>上午09:30</p>
 <p class="wide">📍 <b>活動地點：</b>台北車站世界大樓A教室（台北市中正區重慶南路一段95號11樓） <a href="https://maps.app.goo.gl/JYyJZYSFVZdcoX3w7" target="_blank" rel="noopener noreferrer" class="map-link">🗺️ 地圖</a></p>
@@ -142,9 +144,10 @@ textarea{min-height:90px;resize:vertical}.choices{display:grid;gap:8px}.choice{d
 <div class="field" data-q="4"><span class="legend">生理性別 <span class="req">*</span></span><div class="choices"><label class="choice"><input type="radio" name="sex" value="男" required>男</label><label class="choice"><input type="radio" name="sex" value="女">女</label><label class="choice"><input type="radio" name="sex" value="其他">其他</label></div></div>
 <div class="field" data-q="5"><label class="legend" for="birthDate">出生年月日 <span class="req">*</span></label><p class="help">保險用</p><input id="birthDate" name="birthDate" type="date" required></div>
 <div class="field" data-q="6"><label class="legend" for="nationalId">身分證字號 <span class="req">*</span></label><p class="help">保險用</p><input id="nationalId" name="nationalId" type="text" required maxlength="10" autocomplete="off"></div>
-<div class="field" data-q="7"><label class="legend" for="phone">手機號碼 <span class="req">*</span></label><p class="help">請確實填寫以利聯繫</p><input id="phone" name="phone" type="tel" required autocomplete="tel"></div>
-<div class="field" data-q="8"><label class="legend" for="email">Email</label><p class="help">選填。填寫 Email 者，送出後會收到「報名成功／候補通知」；未填寫不影響報名資格，只是不會收到 Email 通知。</p><input id="email" name="email" type="email" autocomplete="email"></div>
-<div class="form-part"><strong>第二部分｜Mentor參與情形＆活動期待</strong><span>請依你的參與經驗與期待填寫。</span></div><div class="field" data-q="9">
+<div class="field" data-q="7"><label class="legend" for="legalGuardian">法定代理人姓名 <span id="legalGuardianReq" class="req hidden">*</span></label><p class="help">若報名者未滿18歲足歲，請填寫法定代理人姓名，以利完成保險程序。</p><input id="legalGuardian" name="legalGuardian" type="text"></div>
+<div class="field" data-q="8"><label class="legend" for="phone">手機號碼 <span class="req">*</span></label><p class="help">請確實填寫以利聯繫</p><input id="phone" name="phone" type="tel" required autocomplete="tel"></div>
+<div class="field" data-q="9"><label class="legend" for="email">Email</label><p class="help">選填。填寫 Email 者，送出後會收到「報名成功／候補通知」；未填寫不影響報名資格，只是不會收到 Email 通知。</p><input id="email" name="email" type="email" autocomplete="email"></div>
+<div class="form-part"><strong>第二部分｜Mentor參與情形＆活動期待</strong><span>請依你的參與經驗與期待填寫。</span></div><div class="field" data-q="10">
 <span class="legend">今年參與 Mentor 方案的情形 <span class="req">*</span></span>
 <div class="help"><span class="dot">．請選擇最符合你今年參與情形的一項。</span></div>
 <div class="choices identity-choices">
@@ -170,35 +173,59 @@ textarea{min-height:90px;resize:vertical}.choices{display:grid;gap:8px}.choice{d
   </label>
 </div>
 </div>
-<div class="field" data-q="10"><span class="legend">在這次團體中我期待：（請依期待程度複選，至多5項） <span class="req">*</span></span><div id="expectations" class="choices"></div><div id="expectCounter" class="counter">已選擇 0／5 項</div><input id="expectOtherText" class="inline-other" type="text" placeholder="請填寫其他期待"></div>
-<div class="form-part"><strong>第三部分｜餐食與交通</strong><span>如有交通補助需求，選擇「有」後會顯示交通資料欄位。</span></div><div class="field" data-q="11"><span class="legend">用餐習慣 <span class="req">*</span></span><div class="choices"><label class="choice"><input type="radio" name="meal" value="葷" required>葷</label><label class="choice"><input type="radio" name="meal" value="素">素</label><label class="choice"><input type="radio" name="meal" value="不用餐">不用餐</label></div></div>
-<div class="field" data-q="12"><span class="legend">有無交通費補助需求？ <span class="req">*</span></span><div class="choices"><label class="choice"><input type="radio" name="transportSubsidy" value="有" required>有</label><label class="choice"><input type="radio" name="transportSubsidy" value="無">無</label></div></div>
+<div class="field" data-q="11"><span class="legend">在這次團體中我期待：（請依期待程度複選，至多3項） <span class="req">*</span></span><div id="expectations" class="choices"></div><div id="expectCounter" class="counter">已選擇 0／3 項</div><input id="expectOtherText" class="inline-other" type="text" placeholder="請填寫其他期待"></div>
+<div class="field" data-q="12"><span class="legend">你想聽洛克威爾／資深 Mentor 分享哪些主題？（可複選，至多3項） <span class="req">*</span></span><div id="speakerTopics" class="choices"></div><div id="speakerCounter" class="counter">已選擇 0／3 項</div><input id="speakerOtherText" class="inline-other" type="text" placeholder="請填寫其他想聽的主題"></div>
+<div class="form-part"><strong>第三部分｜餐食與交通</strong><span>如有交通補助需求，選擇「有」後會顯示交通資料欄位。</span></div><div class="field" data-q="13"><span class="legend">用餐習慣 <span class="req">*</span></span><div class="choices"><label class="choice"><input type="radio" name="meal" value="葷" required>葷</label><label class="choice"><input type="radio" name="meal" value="素">素</label><label class="choice"><input type="radio" name="meal" value="不用餐">不用餐</label></div></div>
+<div class="field" data-q="14"><span class="legend">有無交通費補助需求？ <span class="req">*</span></span><div class="choices"><label class="choice"><input type="radio" name="transportSubsidy" value="有" required>有</label><label class="choice"><input type="radio" name="transportSubsidy" value="無">無</label></div></div>
 <section id="transportSection" class="hidden"><hr style="border:0;border-top:1px solid var(--line);margin:28px 0"><div class="form-part"><strong>第四部分｜交通費補助資料</strong><span>僅有交通費補助需求者填寫。</span></div><div class="note"><b>申請交通費補助相關說明：</b><br>(1) 去程：請妥善保管實體車票或實體購票證明，11/14（六）當場提供給社工請款。<br>(2) 返程：預計由學員將車票或購票證明（實體）寄到總會，收齊後將撥款至各工作站，再請學員至工作站領取。<br>(3) 車票期間：可提前一天（11/13）抵達台北，延後一天（11/15）返回居住地，不限當天來回。<br>(4) 無論來回程，僅接受直達車次（因住所或不可抗力之因素而有轉車需求者，不在此限）。例如：11/13先從台南到新竹找朋友聚會，11/14上午再從新竹搭車上台北，則只有新竹到台北的交通可以申請經費。</div><br>
-<div class="field" data-q="13"><span class="legend">交通方式 <span class="req">*</span></span><div class="choices"><label class="choice"><input class="transport-required" type="radio" name="transportMode" value="高鐵">高鐵</label><label class="choice"><input type="radio" name="transportMode" value="台鐵">台鐵</label><label class="choice"><input type="radio" name="transportMode" value="客運">客運</label><label class="choice"><input id="transportOther" type="radio" name="transportMode" value="其他">其他</label></div><input id="transportOtherText" class="inline-other" type="text" placeholder="請填寫其他交通方式"></div>
-<div class="field" data-q="14"><label class="legend" for="outbound">去程（往台北）車站 <span class="req">*</span></label><p class="help">範例：台中 → 台北</p><input class="transport-required" id="outbound" name="outbound" type="text"></div>
-<div class="field" data-q="15"><label class="legend" for="returnTrip">返程車站 <span class="req">*</span></label><p class="help">範例：台北 → 彰化</p><input class="transport-required" id="returnTrip" name="returnTrip" type="text"></div>
-<div class="field" data-q="16"><label class="legend" for="transfer">轉車需求</label><p class="help"><span class="dot">．沒有可不用填寫。</span><span class="dot">．範例：田中車站 → 新烏日火車站</span></p><input id="transfer" name="transfer" type="text"></div>
-<div class="field" data-q="17"><label class="legend" for="transportEstimate">交通費初估</label><p class="help">若不確定可先不填寫。</p><input id="transportEstimate" name="transportEstimate" type="number" min="0" step="1" placeholder="例如：1490"></div></section>
-<hr style="border:0;border-top:1px solid var(--line);margin:28px 0"><div class="form-part"><strong>第五部分｜個人資料告知與同意</strong><span>送出前請閱讀下列告知事項。</span></div><div class="privacy"><h3>一、蒐集單位與目的</h3>社團法人中華育幼機構兒童關懷協會（CCSA）為辦理「115年度CCSA自立Mentor回顧交流團體」之報名聯繫、參加資格及名額管理、活動保險、餐食與交通補助、活動行政管理及必要之後續聯繫，蒐集本表單所填資料。<h3>二、蒐集之個人資料</h3>包含姓名、區域、社工姓名、生理性別、出生年月日、身分證字號、手機號碼、Email（選填）、活動參與身分、活動期待、用餐習慣、交通補助需求及相關交通資訊等。<h3>三、利用期間、地區、對象及方式</h3>於本活動辦理及相關行政作業所必要期間內，在中華民國境內，由CCSA及因活動執行所必要之合作或受託單位，以紙本或電子方式蒐集、處理及利用。涉及保險之必要資料，將提供予辦理活動保險之相關單位；交通補助資料將用於補助審核、核銷與撥付作業。<h3>四、當事人權利</h3>依個人資料保護法規定，你得就本人個人資料依法行使查詢或請求閱覽、請求製給複製本、請求補充或更正、請求停止蒐集、處理或利用，以及請求刪除等權利；如因法令或執行業務所必要者，CCSA得依法不予執行。<h3>五、不提供資料之影響</h3>必填資料若未提供，可能無法完成報名、活動聯繫、保險或交通補助等必要作業。Email為選填；未提供Email不影響報名資格，但不會收到系統寄送之報名成功／候補通知。<h3>六、聯絡方式</h3>如對個人資料使用有疑問，可洽活動聯絡人趙婉婷，電話 (02)2378-8585 分機501。</div>
-<div class="field" style="margin-top:16px"><label class="choice"><input id="privacyConsent" type="checkbox" required><span>我已閱讀並了解上述個人資料告知事項，並同意於上述目的範圍內蒐集、處理及利用本人資料。 <span class="req">*</span></span></label></div>
+<div class="field" data-q="15"><span class="legend">交通方式 <span class="req">*</span></span><div class="choices"><label class="choice"><input class="transport-required" type="radio" name="transportMode" value="高鐵">高鐵</label><label class="choice"><input type="radio" name="transportMode" value="台鐵">台鐵</label><label class="choice"><input type="radio" name="transportMode" value="客運">客運</label><label class="choice"><input id="transportOther" type="radio" name="transportMode" value="其他">其他</label></div><input id="transportOtherText" class="inline-other" type="text" placeholder="請填寫其他交通方式"></div>
+<div class="field" data-q="16"><label class="legend" for="outbound">去程（往台北）車站 <span class="req">*</span></label><p class="help">範例：台中 → 台北</p><input class="transport-required" id="outbound" name="outbound" type="text"></div>
+<div class="field" data-q="17"><label class="legend" for="returnTrip">返程車站 <span class="req">*</span></label><p class="help">範例：台北 → 彰化</p><input class="transport-required" id="returnTrip" name="returnTrip" type="text"></div>
+<div class="field" data-q="18"><label class="legend" for="transfer">轉車需求</label><p class="help"><span class="dot">．沒有可不用填寫。</span><span class="dot">．範例：田中車站 → 新烏日火車站</span></p><input id="transfer" name="transfer" type="text"></div>
+<div class="field" data-q="19"><label class="legend" for="transportEstimate">交通費初估</label><p class="help">若不確定可先不填寫。</p><input id="transportEstimate" name="transportEstimate" type="number" min="0" step="1" placeholder="例如：1490"></div></section>
+<hr style="border:0;border-top:1px solid var(--line);margin:28px 0"><div class="form-part"><strong>第五部分｜個人資料告知與同意</strong><span>送出前請閱讀下列告知事項。</span></div><div class="privacy"><h3>一、蒐集單位與目的</h3>社團法人中華育幼機構兒童關懷協會（CCSA）為辦理「115年度CCSA自立Mentor回顧交流團體」之報名聯繫、參加資格及名額管理、活動保險、餐食與交通補助、活動行政管理及必要之後續聯繫，蒐集本表單所填資料。<h3>二、蒐集之個人資料</h3>包含姓名、區域、社工姓名、生理性別、出生年月日、身分證字號、法定代理人姓名（未滿18歲足歲者填寫）、手機號碼、Email（選填）、活動參與身分、活動期待、想聽洛克威爾／資深 Mentor 分享的主題、用餐習慣、交通補助需求及相關交通資訊等。<h3>三、利用期間、地區、對象及方式</h3>於本活動辦理及相關行政作業所必要期間內，在中華民國境內，由CCSA及因活動執行所必要之合作或受託單位，以紙本或電子方式蒐集、處理及利用。涉及保險之必要資料，將提供予辦理活動保險之相關單位；交通補助資料將用於補助審核、核銷與撥付作業。<h3>四、當事人權利</h3>依個人資料保護法規定，你得就本人個人資料依法行使查詢或請求閱覽、請求製給複製本、請求補充或更正、請求停止蒐集、處理或利用，以及請求刪除等權利；如因法令或執行業務所必要者，CCSA得依法不予執行。<h3>五、不提供資料之影響</h3>必填資料若未提供，可能無法完成報名、活動聯繫、保險或交通補助等必要作業。Email為選填；未提供Email不影響報名資格，但不會收到系統寄送之報名成功／候補通知。<h3>六、聯絡方式</h3>如對個人資料使用有疑問，可洽活動聯絡人趙婉婷，電話 (02)2378-8585 分機501。</div>
+<div class="field" style="margin-top:16px"><label class="choice"><input id="privacyConsent" type="checkbox" required><span>我已閱讀並了解上述個人資料告知事項，並同意於上述目的範圍內蒐集、處理及利用本表所填個人資料。 <span class="req">*</span></span></label></div>
 <p class="small">送出後請留意畫面顯示的報名結果，確認報名狀態（正取／候補）；有填寫 Email 者也會收到報名結果通知。</p>
 <button id="submitBtn" class="submit" type="submit">送出報名</button><div id="status" class="status" role="status" aria-live="polite"></div></form></main>
 <script>
 // Google Apps Script Web App 正式網址。
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwJNmE6DEzz1slnBY_dIxUak7lPGEg9e45QGjy998pRSvSbXFSmiQCJcrXJPZHDrYBWrA/exec';
 const EXPECTATIONS=[
-'回顧今年參加 Mentor 活動的經驗與收穫','聽聽其他 Mentor 的演講經驗','跟其他 Mentor／少年認識、聊天與交流','分享自己當 Mentor 遇到的困難，一起想辦法','討論 Mentor 可能遇到的人際界線與倫理問題','學習成為 Mentor 實用的技巧','更了解「Mentor」這個角色，以及自己適不適合','想想自己希望成為什麼樣的 Mentor','聽聽今年各區的 Mentor 活動','分享哪些 Mentor 活動做得不錯、哪些可以改進','一起討論明年想辦什麼 Mentor 活動','一起想明年可以做哪些社會服務／SDGs行動','聽洛克威爾／來賓分享生命與服務經驗','聽資深 Mentor 分享服務經驗','獲得 Mentor 聘書、獎狀或年度肯定','其他'
+'回顧今年參加 Mentor 活動的經驗與收穫','聽聽其他 Mentor 的分享與服務經驗','分享當 Mentor 遇到的困難，一起想辦法','學習成為 Mentor 實用的技巧，更了解 Mentor 這個角色','聽聽今年各區 Mentor 活動，分享做得不錯或可以改進的地方','一起討論明年想辦的活動內容','獲得 Mentor 聘書、獎狀或年度肯定','其他'
 ];
-const expBox=document.getElementById('expectations');
-EXPECTATIONS.forEach((x,i)=>{const l=document.createElement('label');l.className='choice';l.innerHTML=`<input type="checkbox" name="expectations" value="${x}" ${i===0?'required':''}> <span>${x}${x==='其他'?'：':''}</span>`;expBox.appendChild(l)});
-const expInputs=[...document.querySelectorAll('input[name=expectations]')], counter=document.getElementById('expectCounter'), expOther=document.getElementById('expectOtherText');
-function updateExp(){const checked=expInputs.filter(x=>x.checked);counter.textContent=`已選擇 ${checked.length}／5 項`;counter.classList.toggle('limit',checked.length===5);expInputs.forEach(x=>{if(!x.checked)x.disabled=checked.length>=5});expInputs[0].required=checked.length===0;const other=expInputs.find(x=>x.value==='其他');expOther.style.display=other.checked?'block':'none';expOther.required=other.checked}
-expInputs.forEach(x=>x.addEventListener('change',updateExp));updateExp();
+const SPEAKER_TOPICS=[
+'從低潮、挫折或困難中走過來的經驗','工作、職涯選擇與未來方向','金錢管理、存錢與經濟自立','人際關係、溝通與相處','如何建立自信、找到自己的優勢','遇到壓力時，怎麼調整自己','從受幫助的人，成為可以幫助別人的人','擔任 Mentor／分享者的經驗與技巧','參與公益、服務他人或回饋社會的經驗','其他'
+];
+function buildMultiChoice(boxId,name,items,counterId,otherId){
+ const box=document.getElementById(boxId);
+ items.forEach((x,i)=>{const l=document.createElement('label');l.className='choice';l.innerHTML=`<input type="checkbox" name="${name}" value="${x}" ${i===0?'required':''}> <span>${x}${x==='其他'?'：':''}</span>`;box.appendChild(l)});
+ const inputs=[...document.querySelectorAll(`input[name=${name}]`)],counter=document.getElementById(counterId),otherText=document.getElementById(otherId);
+ function update(){const checked=inputs.filter(x=>x.checked);counter.textContent=`已選擇 ${checked.length}／3 項`;counter.classList.toggle('limit',checked.length===3);inputs.forEach(x=>{if(!x.checked)x.disabled=checked.length>=3});inputs[0].required=checked.length===0;const other=inputs.find(x=>x.value==='其他');otherText.style.display=other.checked?'block':'none';otherText.required=other.checked}
+ inputs.forEach(x=>x.addEventListener('change',update));update();return {inputs,otherText};
+}
+const expGroup=buildMultiChoice('expectations','expectations',EXPECTATIONS,'expectCounter','expectOtherText');
+const expInputs=expGroup.inputs,expOther=expGroup.otherText;
+const speakerGroup=buildMultiChoice('speakerTopics','speakerTopics',SPEAKER_TOPICS,'speakerCounter','speakerOtherText');
+const speakerInputs=speakerGroup.inputs,speakerOther=speakerGroup.otherText;
+const birthDateInput=document.getElementById('birthDate'),legalGuardianInput=document.getElementById('legalGuardian'),legalGuardianReq=document.getElementById('legalGuardianReq');
+function updateLegalGuardianRequirement(){
+ const value=birthDateInput.value;
+ if(!value){legalGuardianInput.required=false;legalGuardianReq.classList.add('hidden');return}
+ const birth=new Date(value+'T00:00:00'),eventDate=new Date('2026-11-14T00:00:00');
+ let age=eventDate.getFullYear()-birth.getFullYear();
+ const birthdayPassed=(eventDate.getMonth()>birth.getMonth())||(eventDate.getMonth()===birth.getMonth()&&eventDate.getDate()>=birth.getDate());
+ if(!birthdayPassed)age--;
+ const under18=age<18;
+ legalGuardianInput.required=under18;
+ legalGuardianReq.classList.toggle('hidden',!under18);
+}
+birthDateInput.addEventListener('change',updateLegalGuardianRequirement);
+updateLegalGuardianRequirement();
 document.querySelectorAll('input[name=transportSubsidy]').forEach(x=>x.addEventListener('change',()=>{const yes=document.querySelector('input[name=transportSubsidy]:checked')?.value==='有';document.getElementById('transportSection').classList.toggle('hidden',!yes);document.querySelectorAll('.transport-required').forEach(el=>el.required=yes);if(!yes){document.querySelectorAll('#transportSection input').forEach(el=>{if(el.type==='radio'||el.type==='checkbox')el.checked=false;else el.value=''});document.getElementById('transportOtherText').style.display='none'}}));
 document.querySelectorAll('input[name=transportMode]').forEach(x=>x.addEventListener('change',()=>{const other=document.getElementById('transportOther').checked, t=document.getElementById('transportOtherText');t.style.display=other?'block':'none';t.required=other}));
 const form=document.getElementById('form'), statusEl=document.getElementById('status'), btn=document.getElementById('submitBtn');
-form.addEventListener('submit',async e=>{e.preventDefault();const selected=expInputs.filter(x=>x.checked);if(selected.length<1||selected.length>5){alert('活動期待請選擇1至5項。');return}if(SCRIPT_URL.startsWith('PASTE_')){alert('尚未設定 Google Apps Script 網址，請先依部署說明完成設定。');return}btn.disabled=true;btn.textContent='送出中…';statusEl.className='status';
-const fd=new FormData(form);const payload={};for(const [k,v] of fd.entries()){if(k==='expectations')continue;payload[k]=v}payload.expectations=selected.map(x=>x.value==='其他'?`其他：${expOther.value.trim()}`:x.value);payload.expectOther=expOther.value.trim();payload.transportOther=document.getElementById('transportOtherText').value.trim();payload.privacyConsent=document.getElementById('privacyConsent').checked;payload.submittedFrom=location.href;
+form.addEventListener('submit',async e=>{e.preventDefault();const selected=expInputs.filter(x=>x.checked),selectedSpeaker=speakerInputs.filter(x=>x.checked);if(selected.length<1||selected.length>3){alert('活動期待請選擇1至3項。');return}if(selectedSpeaker.length<1||selectedSpeaker.length>3){alert('分享主題請選擇1至3項。');return}if(SCRIPT_URL.startsWith('PASTE_')){alert('尚未設定 Google Apps Script 網址，請先依部署說明完成設定。');return}btn.disabled=true;btn.textContent='送出中…';statusEl.className='status';
+const fd=new FormData(form);const payload={};for(const [k,v] of fd.entries()){if(k==='expectations'||k==='speakerTopics')continue;payload[k]=v}payload.expectations=selected.map(x=>x.value==='其他'?`其他：${expOther.value.trim()}`:x.value);payload.expectOther=expOther.value.trim();payload.speakerTopics=selectedSpeaker.map(x=>x.value==='其他'?`其他：${speakerOther.value.trim()}`:x.value);payload.speakerOther=speakerOther.value.trim();payload.transportOther=document.getElementById('transportOtherText').value.trim();payload.privacyConsent=document.getElementById('privacyConsent').checked;payload.submittedFrom=location.href;
 try{const res=await fetch(SCRIPT_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)});const out=await res.json();if(!out.ok)throw new Error(out.message||'送出失敗');statusEl.className='status ok';statusEl.innerHTML=`<b>報名資料已送出。</b><br>你的報名狀態：<b>${out.registrationStatus}</b>${payload.email?'<br>系統已嘗試寄送通知至你填寫的 Email。':''}`;form.querySelectorAll('input,select,textarea,button').forEach(el=>el.disabled=true);statusEl.scrollIntoView({behavior:'smooth',block:'center'});}catch(err){statusEl.className='status err';statusEl.textContent='送出失敗：'+err.message+'。請稍後再試，或聯絡活動承辦人。';btn.disabled=false;btn.textContent='送出報名';}}
 );
 </script></body></html>
