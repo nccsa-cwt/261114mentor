@@ -44,6 +44,47 @@ textarea{min-height:90px;resize:vertical}.choices{display:grid;gap:8px}.choice{d
 .schedule-list{list-style:none;margin:0;padding:0}.schedule-list li{position:relative;padding:4px 0 4px 20px}.schedule-list li::before{content:"．";position:absolute;left:0;color:var(--brand);font-weight:800}
 .activity-admin p{margin:4px 0}.activity-contact{margin-top:16px}
 @media(max-width:650px){.activity-main{grid-template-columns:1fr}.activity-main .wide{grid-column:auto}}
+
+/* ===== 活動資訊 v3 ===== */
+.activity-title{
+  margin:0 0 22px;
+  padding-bottom:12px;
+  position:relative;
+  color:var(--dark);
+  font-size:24px;
+  font-weight:850;
+}
+.activity-title::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:64px;
+  height:4px;
+  border-radius:999px;
+  background:var(--brand);
+}
+.activity-main{margin-top:2px}
+.activity-highlight{
+  margin-top:26px;
+  padding:24px 0 0;
+  background:transparent;
+  border:0;
+  border-top:1px solid var(--line);
+  border-radius:0;
+}
+.activity-highlight h3{margin:0 0 12px}
+.benefit-list{
+  margin:0;
+  padding-left:1.5em;
+}
+.benefit-list p{margin:5px 0}
+.activity-block{margin-top:24px;padding-top:24px;border-top:1px solid var(--line)}
+.schedule-list{padding-left:1.5em}
+.activity-admin{display:grid;gap:5px}
+.activity-admin p{margin:0;line-height:1.75}
+.activity-contact{display:contents}
+
 </style>
 </head>
 <body><main class="wrap">
@@ -58,7 +99,7 @@ textarea{min-height:90px;resize:vertical}.choices{display:grid;gap:8px}.choice{d
 
 　　「回顧交流團體」不限Mentor講師，只要今年有參與過技能培力團體、討論永續行動團體、自立生活經驗分享、SDGs永續發展服務行動的青少年、見習Mentor，都可以報名！</div></section>
 <section class="card">
-<h2 class="section-title">活動資訊</h2>
+<h2 class="activity-title">活動資訊</h2>
 <div class="activity-main">
 <p>📅 <b>活動日期：</b>115年11月14日（週六）</p>
 <p>📅 <b>報名截止日：</b>115年10月30日（週五）</p>
@@ -68,8 +109,10 @@ textarea{min-height:90px;resize:vertical}.choices{display:grid;gap:8px}.choice{d
 </div>
 <div class="activity-highlight">
 <h3>✨ 來參與課程，你將收穫～</h3>
+<div class="benefit-list">
 <p>✅ 認識新朋友、與老朋友相聚</p>
 <p>✅ 分享與交流今年參與Mentor活動的心得</p>
+</div>
 </div>
 <div class="activity-block">
 <h3>📋 活動規劃</h3>
@@ -82,10 +125,9 @@ textarea{min-height:90px;resize:vertical}.choices{display:grid;gap:8px}.choice{d
 <p>👥 <b>招募人數：</b>40人（額滿後為候補）</p>
 <p>💰 <b>活動費用：</b>免費（提供食宿、交通補助，北北基地區以外依車票補助）</p>
 <p>📧 <b>保險保障：</b>活動期間提供保險</p>
-<div class="activity-contact">
 <p>📞 <b>聯絡人：</b>趙婉婷　(02)2378-8585 分機 501</p>
 <p>📱 <b>Line ID：</b>nccsa02（加好友後請先打聲招呼介紹你的名字）</p>
-</div></div>
+</div>
 </section>
 <form id="form" class="card"><div class="form-part"><strong>第一部分｜基本報名資料</strong><span>請依實際情況填寫；標示 * 為必填欄位。</span></div>
 <div class="field" data-q="1"><label class="legend" for="name">姓名 <span class="req">*</span></label><p class="help">請提供全名</p><input id="name" name="name" type="text" required autocomplete="name"></div>
